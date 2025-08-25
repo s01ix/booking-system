@@ -25,7 +25,7 @@ public class Appointment extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "service_id", nullable = false)
-    private Service service;
+    private OfferedService service;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
@@ -34,5 +34,3 @@ public class Appointment extends BaseEntity {
     private String notes;
 
 }
-
-

@@ -31,5 +31,3 @@ public class AvailableSlot extends BaseEntity{
     @Version
     private Long version;
 }
-
-

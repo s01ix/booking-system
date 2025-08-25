@@ -20,7 +20,7 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Service extends BaseEntity {
+public class OfferedService extends BaseEntity {
     @NotBlank
     @Column(unique = true)
     private String name;

@@ -30,7 +30,7 @@ public class Specialist extends BaseEntity {
             joinColumns = @JoinColumn(name = "specialist_id"),
             inverseJoinColumns = @JoinColumn(name = "service_id")
     )
-    private Set<Service> services = new HashSet<>();  // DODAJ: jakie usługi oferuje
+    private Set<OfferedService> services = new HashSet<>();  // DODAJ: jakie usługi oferuje
 
     @ManyToOne
     @JoinColumn(name = "address_id")

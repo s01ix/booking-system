@@ -11,6 +11,8 @@ import java.time.Instant;
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)  // potrzebne do @CreatedDate i @LastModifiedDate
 @Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public abstract class BaseEntity {
