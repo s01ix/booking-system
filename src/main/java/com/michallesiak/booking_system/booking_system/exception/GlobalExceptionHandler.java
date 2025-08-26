@@ -57,6 +57,30 @@ public class GlobalExceptionHandler {
         return createErrorResponse(HttpStatus.NOT_FOUND, ex.getMessage());
     }
 
+    @ExceptionHandler(ServiceNotFoundException.class)
+    public ResponseEntity<Map<String, Object>> handleServiceNotFoundException(ServiceNotFoundException ex) {
+        log.error("Service not found: {}", ex.getMessage());
+        return createErrorResponse(HttpStatus.NOT_FOUND, ex.getMessage());
+    }
+
+    @ExceptionHandler(SpecialistNotFoundException.class)
+    public ResponseEntity<Map<String, Object>> handleSpecialistNotFoundException(SpecialistNotFoundException ex) {
+        log.error("Specialist not found: {}", ex.getMessage());
+        return createErrorResponse(HttpStatus.NOT_FOUND, ex.getMessage());
+    }
+
+    @ExceptionHandler(SpecialistAlreadyExistsException.class)
+    public ResponseEntity<Map<String, Object>> handleSpecialistAlreadyExistsException(SpecialistAlreadyExistsException ex) {
+        log.error("Specialist already exists: {}", ex.getMessage());
+        return createErrorResponse(HttpStatus.CONFLICT, ex.getMessage());
+    }
+
+    @ExceptionHandler(ServiceAlreadyExistsException.class)
+    public ResponseEntity<Map<String, Object>> handleServiceAlreadyExistsException(ServiceAlreadyExistsException ex) {
+        log.error("Service already exists: {}", ex.getMessage());
+        return createErrorResponse(HttpStatus.CONFLICT, ex.getMessage());
+    }
+
     @ExceptionHandler(SlotConflictException.class)
     public ResponseEntity<Map<String, Object>> handleSlotConflictException(SlotConflictException ex) {
         log.error("Slot conflict: {}", ex.getMessage());
