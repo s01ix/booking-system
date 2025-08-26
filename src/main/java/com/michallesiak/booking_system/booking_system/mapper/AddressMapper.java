@@ -1,5 +1,6 @@
 package com.michallesiak.booking_system.booking_system.mapper;
 
+import com.michallesiak.booking_system.booking_system.dto.CreateAddressRequest;
 import com.michallesiak.booking_system.booking_system.model.Address;
 import com.michallesiak.booking_system.booking_system.dto.AddressDto;
 
@@ -16,9 +17,8 @@ public class AddressMapper {
         );
     }
 
-    public static Address toEntity(AddressDto dto) {
+    public static Address toEntity(CreateAddressRequest dto) {
         Address address = new Address();
-        address.setId(dto.getId());
         address.setCountry(dto.getCountry());
         address.setCity(dto.getCity());
         address.setStreet(dto.getStreet());
@@ -27,4 +27,3 @@ public class AddressMapper {
         return address;
     }
 }
-
