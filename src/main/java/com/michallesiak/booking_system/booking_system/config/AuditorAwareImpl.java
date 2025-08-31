@@ -15,7 +15,7 @@ public class AuditorAwareImpl implements AuditorAware<String> {
     public Optional<String> getCurrentAuditor() {
         var authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication == null || !authentication.isAuthenticated() || authentication instanceof AnonymousAuthenticationToken) {
-            return Optional.of("skibiditoilet");
+            return Optional.of("system");
         }
         Object principal = authentication.getPrincipal();
         return (principal instanceof UserDetails) ?
