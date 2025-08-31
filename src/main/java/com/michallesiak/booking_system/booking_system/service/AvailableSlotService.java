@@ -21,4 +21,5 @@ public interface AvailableSlotService {
     void deleteSlot(Long id);
     void deleteSlotsBySpecialistAndDateRange(Long specialistId, LocalDateTime start, LocalDateTime end);
     boolean isSlotConflicting(Long specialistId, LocalDateTime startTime, LocalDateTime endTime, Long excludeSlotId);
+    boolean isSlotAvailable(Long slotId);
 }

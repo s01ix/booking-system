@@ -225,4 +225,13 @@ public class AvailableSlotServiceImpl implements AvailableSlotService {
             throw new IllegalArgumentException("Cannot create slots in the past");
         }
     }
+    @Override
+    public boolean isSlotAvailable(Long slotId) {
+        log.info("Checking availability for slot: {}", slotId);
+
+        AvailableSlot slot = availableSlotRepository.findById(slotId)
+                .orElseThrow(() -> new SlotNotFoundException("Slot not found with id: " + slotId));
+
+        return !slot.isBooked();
+    }
 }
